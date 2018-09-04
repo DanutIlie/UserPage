@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <div class="sm-jumbotron center-align">
+        <h2>User Page</h2>
+      </div>
+      <form  class="col s12 white align-self-center" #imageForm="ngForm" (ngSubmit)="OnSubmit(FirstName,LastName,Gender,DateOfBirth)">
+        <div class="row">
+           <div class="input-field col s6 align-self-center">
+              <div>
+                <label>File Upload</label>
+              </div>
+                <img [src]="imageUrl" style="width:200px;height:150px">
+                <div>
+                  <input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)">
+                </div>
+            </div>
+          <div class="input-field col s6 align-self-center ">
+            <div>
+              <input required type="text" #FirstName  name="FirstName" placeholder = "First Name">
+            </div>
+            <div>
+              <input  type="text" #LastName  name="LastName" placeholder="Last Name" >
+            </div>
+            <div>
+              <div>
+                <label>Gender</label>
+              </div>
+              <select id="Gender"  #Gender  name="Gender" >
+                <option value=" ">--</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>  
+            </div>  
+            <div>
+              <div>
+                <label>Date of Birth</label>
+              </div>
+              <input  type="text" bsDatepicker id="DateOfBirth" #DateOfBirth name="DateOfBirth">
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <button type="submit" class="btn-large btn-submit" >Submit</button>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>
