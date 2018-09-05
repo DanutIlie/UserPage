@@ -4,7 +4,7 @@
       <div class="sm-jumbotron center-align">
         <h2>User Page</h2>
       </div>
-      <form  class="col s12 white align-self-center" #imageForm="ngForm" (ngSubmit)="OnSubmit(FirstName,LastName,Gender,DateOfBirth)">
+      <form  class="col s12 white align-self-center" #imageForm="ngForm" (ngSubmit)="OnSubmit(FirstName,LastName,Gender,DateOfBirth,ImageName)">
         <div class="row">
            <div class="input-field col s6 align-self-center">
               <div>
@@ -12,7 +12,7 @@
               </div>
                 <img [src]="imageUrl" style="width:200px;height:150px">
                 <div>
-                  <input type="file" #image accept="image/*" (change)="handleFileInput($event.target.files)">
+                  <input type="file" #ImageName accept="image/*" (change)="handleFileInput($event.target.files)">
                 </div>
             </div>
           <div class="input-field col s6 align-self-center ">

@@ -29,18 +29,17 @@ export class SingUpComponent implements OnInit {
   reader.readAsDataURL(this.fileToUpload);
 }
 
-OnSubmit(FirstName,LastName,Gender,DateOfBirth,Image)
+OnSubmit(FirstName,LastName,Gender,DateOfBirth,ImageName)
 {
   this.imageService.postFile(FirstName.value,LastName.value,Gender.value,DateOfBirth.value, this.fileToUpload).subscribe(
     data =>{
-      console.log('done');
       FirstName.value = null;
       LastName.value = null;
       Gender.value = null;
       DateOfBirth.value=null;
-
-      Image.value = null;
-      this.imageUrl = "/assets/img/default-image.png";
+      ImageName.value = null;
+      this.imageUrl = "/assets/img/default-img.png";
+      console.log('done');
     }
   );
 }
